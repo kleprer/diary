@@ -1,7 +1,9 @@
+import NavbarController from "@/components/NavbarController";
+
 export default function Home() {
   return (
     <>
-      привет!!
+      <NavbarController type={1} />
       
     </>
 
