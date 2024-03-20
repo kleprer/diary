@@ -16,14 +16,16 @@ const AuthWindow = () => {
 
             </input>
             <button className="m-auto text-[24px] text-center w-[238px] 
-            border-black border-4 rounded-xl mt-[35px] py-[6px]">
+            border-black border-4 rounded-xl mt-[35px] py-[6px]
+            hover:border-gray-300 hover:text-gray-300">
                 Войти
             </button>
             <h2 className="text-[20px] text-center mt-[15px]">
                 или
             </h2>
             <button className="m-auto text-[24px] text-center w-[238px] 
-            border-black border-4 rounded-xl mt-[15px] py-[6px]">
+            border-black border-4 rounded-xl mt-[15px] py-[6px]
+            hover:border-gray-300 hover:text-gray-300">
                 Регистрация
             </button>
         </div>
