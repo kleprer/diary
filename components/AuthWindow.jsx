@@ -7,11 +7,11 @@ const AuthWindow = () => {
             <h2 className="text-[32px] text-center pt-[30px]">
                 С возвращением!
             </h2>
-            <input className="text-[20px] text-black opacity-[60%] mt-[50px]
+            <input className="focus:outline-none text-[20px] text-black opacity-[60%] mt-[50px]
             border-b-4 border-black" type="text" placeholder="Электронная почта">
 
             </input>
-            <input className="text-[20px] text-black opacity-[60%] mt-[50px]
+            <input className="focus:outline-none text-[20px] text-black opacity-[60%] mt-[50px]
             border-b-4 border-black" type="text" placeholder="Пароль">
 
             </input>
