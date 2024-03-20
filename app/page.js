@@ -1,10 +1,10 @@
 import Description from "@/components/Description";
-import NavbarController from "@/components/NavbarController";
+import NavbarHome from "@/components/NavbarHome";
 import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <NavbarController type={1} />
+      <NavbarHome />
       <Description />
       <Image className="position: absolute top-0 h-full w-auto" 
       src="/Mask group.png" 
