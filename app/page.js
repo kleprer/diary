@@ -1,10 +1,15 @@
 import Description from "@/components/Description";
 import NavbarHome from "@/components/NavbarHome";
+import NavbarHomeLogged from "@/components/NavbarHomeLogged";
 import Image from "next/image";
 export default function Home() {
+
+  let isLoggedIn = true;
+
   return (
     <>
-      <NavbarHome />
+      {isLoggedIn == true ? <NavbarHome /> : <NavbarHomeLogged />}
+      
       <Description />
       <Image className="position: absolute top-0 h-full w-auto xl:w-1/2" 
       src="/Mask group.png" 
