@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export default function Home() {
 
-  let isLoggedIn = true;
+  let isLoggedIn = false;
 
   return (
     <>
-      {isLoggedIn == true ? 
+      {isLoggedIn == false ? 
       <Link href="/auth">
         <NavbarHome />
       </Link>

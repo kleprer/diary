@@ -9,6 +9,7 @@ export default function Registration() {
                 <NavbarAuth />
             </Link>
             <RegistrationWindow />
+            
         </>
     )
 }

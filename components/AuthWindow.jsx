@@ -16,11 +16,11 @@ const AuthWindow = () => {
             border-b-4 border-black" type="text" placeholder="Пароль">
 
             </input>
-            <button className="m-auto text-[24px] text-center w-[238px] 
+            <Link href="/calendar" className="m-auto"> <button className=" text-[24px] text-center w-[238px] 
             border-black border-4 rounded-xl mt-[35px] py-[6px]
             hover:border-gray-300 hover:text-gray-300">
                 Войти
-            </button>
+                </button></Link>
             <h2 className="text-[20px] text-center mt-[15px]">
                 или
             </h2>
