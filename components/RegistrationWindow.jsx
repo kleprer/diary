@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 
 const RegistrationWindow = () => {
     return (
@@ -19,11 +20,11 @@ const RegistrationWindow = () => {
                 border-b-4 border-black" type="text" placeholder="Пароль">
     
                 </input>
-                <button className="m-auto text-[24px] text-center w-[296px] 
+                <Link href="/calendar" className="m-auto"><button className="m-auto text-[24px] text-center w-[296px] 
                 border-black border-4 rounded-xl mt-[50px] py-[6px]
                 hover:border-gray-300 hover:text-gray-300">
                     Создать аккаунт
-                </button>
+                </button></Link>
             </div>
         </div>
       )
