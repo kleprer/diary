@@ -7,9 +7,7 @@ import Link from "next/link";
 export default function Auth() {
     return (
         <>
-        <Link href="/">
-            <NavbarAuth />
-        </Link>
+        <NavbarAuth />
         <AuthWindow />
         </>
     )

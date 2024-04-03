@@ -11,9 +11,7 @@ export default function Home() {
   return (
     <>
       {isLoggedIn == false ? 
-      <Link href="/auth">
-        <NavbarHome />
-      </Link>
+      <NavbarHome />
       : <NavbarHomeLogged />}
       
       <Description />
