@@ -1,30 +1,24 @@
 import React from "react";
+import Input from "./Input";
 
 
 
 const PG = () => {
     return(
-        <div>
-            <div className="w-[690px] h-[288px] border border-black border-5 rounded-xl mt-[189px] mb-[523px] mr-[173px] ml-[1033px] ">
-                <div className="flex-none w-[631px] ml-[30px]">
-                    <h2 className="text-[32px] pt-[26px]">
-                        Планы на 03.03
-                    </h2>
-                    <input className='focus:outline-none text-[20px] text-black opacity-[50%] w-[630.01px] border-b-4 border-black mt-[10px]'></input>
-                    <input className='focus:outline-none text-[20px] text-black opacity-[50%] w-[630.01px] border-b-4 border-black mt-[25px]'></input>
-                    <input className='focus:outline-none text-[20px] text-black opacity-[50%] w-[630.01px] border-b-4 border-black mt-[25px]'></input>
-                </div> 
-           </div>
-
-            <div className='w-[690px] h-[288px] border border-black border-5 rounded-xl mt-[39px] mb-[196px] ml-[1033px] '>
-                <div className='flex-none w-[631px] ml-[30px]'>
-                    <h2 className='text-[32px] pt-[26px]'>
-                        Цели
-                    </h2>
-                    <input className='focus:outline-none text-[20px] text-black opacity-[50%] w-[630.01px] border-b-4 border-black mt-[10px] type="text"'></input>
-                    <input className='focus:outline-none text-[20px] text-black opacity-[50%] w-[630.01px] border-b-4 border-black mt-[25px] type="text"'></input>
-                    <input className='focus:outline-none text-[20px] text-black opacity-[50%] w-[630.01px] border-b-4 border-black mt-[25px] type="text"'></input>
-                </div>
+        <div className="flex flex-col gap-[25px] items-end w-full 
+        pl-[20px] pr-[20px] pt-[10px] h-[288px]">
+            <div className="w-[631px] ml-[30px] border-black border-4 
+            rounded-xl p-[10px]">
+                <h2 className="text-[32px]">
+                    Планы на 03.03
+                </h2>
+                <Input />
+            </div> 
+            <div className='w-[631px] ml-[30px] border-black border-4 rounded-xl p-[10px] '>
+                <h2 className='text-[32px]'>
+                    Цели
+                </h2>
+                <Input />
             </div>
         </div>
     )
