@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import AddTodo from './AddTodo'
+import TodoList from './TodoList'
 
 
 const Card = (props) => {
@@ -13,6 +14,7 @@ const Card = (props) => {
                 {props.title}
             </h2>
             <AddTodo />
+            <TodoList />
         </div> 
     </div>
   )
