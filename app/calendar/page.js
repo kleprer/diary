@@ -1,5 +1,5 @@
-import NavbarCalendar from "@/components/NavbarCalendar";
-import Card from "@/components/Card";
+import NavbarCalendar from "/components/NavbarCalendar";
+import Card from "/components/Card";
 export default function Calendar() {
     return(
         <>
