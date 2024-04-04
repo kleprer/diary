@@ -1,12 +1,15 @@
 import NavbarCalendar from "@/components/NavbarCalendar";
 import Link from "next/link";
-import PG from "@/components/PG";
-
+import Card from "@/components/Card";
 export default function Calendar() {
     return(
         <>
             <NavbarCalendar />
-            <PG />
+            <div className="flex flex-col gap-[15px] items-end w-full 
+            pl-[10px] pr-[10px] pt-[10px] h-[288px]">
+                <Card title={"Планы на 03.03"}/>
+                <Card title={"Цели"}/>
+            </div>
             </>
     )
 
