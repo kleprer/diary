@@ -5,9 +5,7 @@ import PG from "@/components/PG";
 export default function Calendar() {
     return(
         <>
-            <Link href="/">
-                <NavbarCalendar />
-            </Link>
+            <NavbarCalendar />
             <PG />
             </>
     )
