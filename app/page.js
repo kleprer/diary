@@ -1,6 +1,7 @@
 import Description from "/components/Description";
 import NavbarHome from "/components/NavbarHome";
 import NavbarHomeLogged from "/components/NavbarHomeLogged";
+import Image from "next/image";
 
 export default function Home() {
 

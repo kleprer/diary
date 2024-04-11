@@ -1,9 +1,7 @@
-
 'use client'
 import NavbarCalendar from "/components/NavbarCalendar";
 import Card from "/components/Card";
 import { useState } from "react";
-
 export default function Calendar() {
     return(
         <>
