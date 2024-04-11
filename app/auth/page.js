@@ -1,8 +1,6 @@
-import AuthWindow from "@/components/AuthWindow";
-import NavbarAuth from "@/components/NavbarAuth";
-import Link from "next/link";
-
-
+import React from 'react';
+import AuthWindow from "/components/AuthWindow";
+import NavbarAuth from "/components/NavbarAuth";
 
 export default function Auth() {
     return (

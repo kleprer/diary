@@ -1,10 +1,17 @@
 'use client'
 import React, { useState } from 'react'
-import AddTodo from './AddTodo'
-import TodoList from './TodoList'
-
+import AddTodo from './AddTodo';
+import Todo from './Todo';
+import TodoList from './TodoList';
 
 const Card = (props) => {
+  
+  // const [todos, setTodos] = useState([]);
+  // const addTodo = todo => {
+  //   setTodos([...todos, {id: uuidv4, task: todo, completed: false,
+  //   isEditing: false}])
+  // }
+
   return (
     <div className="flex flex-col gap-[15px] items-end w-full 
         pl-[10px] pr-[10px] pt-[10px] h-[288px]">
@@ -13,8 +20,17 @@ const Card = (props) => {
             <h2 className="text-[30px] pb-[15px]">
                 {props.title}
             </h2>
-            <AddTodo />
-            <TodoList />
+
+
+
+            
+        {/* <TodoList /> */}
+
+
+            {/* <AddTodo addTodo={addTodo}/>
+            {todos.map((todo,index) => {
+              <Todo/>
+            })} */}
         </div> 
     </div>
   )
