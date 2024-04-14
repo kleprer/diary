@@ -3,7 +3,8 @@ import NavbarCalendar from "/components/NavbarCalendar";
 import Card from "/components/Card";
 import { useState } from "react";
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import '/components/Calendar.css';
+
 
 export default function CalendarTasksGoals() {
 
