@@ -16,14 +16,15 @@ export default function CalendarTasksGoals() {
     return(
         <>
             <NavbarCalendar />
-            <div className="flex w-full items-center gap-[30px] flex-row">
-                <div className="w-full h-full p-10">
+            <div className="flex w-full gap-[5px] flex-row
+            items-start">
+                <div className="w-full h-full pl-[10px] pt-[10px]">
                     <Calendar locale="ru-RU" onChange={setDate} value={date} 
-                    className="
-                    border-4 border-black w-full h-full p-[15px] rounded-xl"/>
+                    className="border-4 border-black w-full m-0  
+                    p-[15px] rounded-xl"/>
                 </div>
-                <div className="flex flex-col gap-[15px] items-end w-full 
-                pl-[10px] pr-[10px] pt-[10px] h-[288px]">
+                <div className="flex flex-col items-end w-full 
+                pl-[10px] pr-[10px]">
                     <Card title={"Планы на 03.03"} />
                     <Card title={"Цели"} />
                 </div>

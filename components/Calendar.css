@@ -1,14 +1,13 @@
-
 .react-calendar {
-    width: 737px;
-    height: 615px;
-    margin-top: 100px;
+    width: 671px;
+    height: 539px;
     max-width: 100%;
     background: white;
-    border: 5px solid #000000;
-    font-family: font;
+    border: 4px solid #000000;
+    font-family: Unbounded;
     line-height: 41.6px;
-    font-size: 32px;
+    font-size: 28px;
+    
   }
   
   .react-calendar--doubleView {
@@ -18,11 +17,13 @@
   .react-calendar--doubleView .react-calendar__viewContainer {
     display: none;
     margin: -0.5em;
+
   }
   
   .react-calendar--doubleView .react-calendar__viewContainer > * {
     width: 50%;
     margin: 0.5em;
+ 
   }
   
   .react-calendar,
@@ -53,6 +54,7 @@
   .react-calendar__navigation button {
     min-width: 44px;
     background: none;
+    text-transform: capitalize;
   }
   
   .react-calendar__navigation button:disabled {
@@ -69,12 +71,13 @@
     text-align: center;
     text-transform: uppercase;
     font: inherit;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: bold;
+    
   }
   
   .react-calendar__month-view__weekdays__weekday {
-    padding: 0.5em;
+    padding: 1em;
   }
   
 
@@ -83,7 +86,7 @@
     align-items: center;
     justify-content: center;
     font: inherit;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
   }
   
@@ -94,24 +97,26 @@
   .react-calendar__month-view__days__day--neighboringMonth,
   .react-calendar__decade-view__years__year--neighboringDecade,
   .react-calendar__century-view__decades__decade--neighboringCentury {
-    color: #f5f3f3;
+    color: #000000;
+    opacity: 50%;
   }
   
   .react-calendar__year-view .react-calendar__tile,
   .react-calendar__decade-view .react-calendar__tile,
   .react-calendar__century-view .react-calendar__tile {
-    padding: 2em 0.5em;
+    padding: 30px;
   }
   
   /* числа месяцы в календаре  */
   .react-calendar__tile { 
     max-width: 100%;
-    padding: 10px 6.6667px;
+    padding: 8px 5px;
     background: none;
     text-align: center;
-    line-height: 41.6px;
+    line-height: 25px;
     font: inherit;
-    font-size: 32px;
+    font-size: 28px;
+    
   }
   
   .react-calendar__tile:disabled {
@@ -152,7 +157,7 @@
     background: #ffffff;
     color: #F14242;
   }
-  
+
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
     background: #ffffff;
