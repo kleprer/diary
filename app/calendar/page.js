@@ -25,7 +25,11 @@ export default function CalendarTasksGoals() {
                 </div>
                 <div className="flex flex-col items-end w-full 
                 pl-[10px] pr-[10px]">
-                    <Card title={"Планы на 03.03"} />
+                    {/* <Card title={"Планы на 03.03"} /> */}
+                    {date.getMonth()+1 < 10 
+                        ? <Card title={`Планы на ${date.getDate()}.0${date.getMonth()+1}`} />
+                        : <Card title={`Планы на ${date.getDate()}.${date.getMonth()+1}`} />
+                    }
                     <Card title={"Цели"} />
                 </div>
             </div>
