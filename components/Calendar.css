@@ -64,11 +64,12 @@
     background-color: #e6e6e6;
   }
   
+    /* дни */
   .react-calendar__month-view__weekdays {
     text-align: center;
     text-transform: uppercase;
     font: inherit;
-    font-size: 0.75em;
+    font-size: 32px;
     font-weight: bold;
   }
   
@@ -76,12 +77,13 @@
     padding: 0.5em;
   }
   
+
   .react-calendar__month-view__weekNumbers .react-calendar__tile {
     display: flex;
-    align-items: end;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
     font: inherit;
-    font-size: 0.75em;
+    font-size: 32px;
     font-weight: bold;
   }
   
@@ -101,14 +103,15 @@
     padding: 2em 0.5em;
   }
   
-  .react-calendar__tile {
+  /* числа месяцы в календаре  */
+  .react-calendar__tile { 
     max-width: 100%;
     padding: 10px 6.6667px;
     background: none;
     text-align: center;
-    line-height: 16px;
+    line-height: 41.6px;
     font: inherit;
-    font-size: 0.833em;
+    font-size: 32px;
   }
   
   .react-calendar__tile:disabled {
