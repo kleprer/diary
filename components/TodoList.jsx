@@ -4,8 +4,6 @@
 import React, {useState} from 'react'
 import { FiEdit2 } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
-import AddTodo from './AddTodo';
-import Todo from './Todo';
 
 const TodoList = (props) => {
 
