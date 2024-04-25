@@ -1,53 +1,47 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
 
 const Card = (props) => {
   
   const [todos, setTodos] = useState([]);
-
+  const hasScroll = todos.length > 3;
   const addTodo = (todo) => { 
     setTodos(todos.concat([{
-      id: Date.now(),
+      id: new Date().getTime()/100000,
       title: todo,
       completed: false,
-      isEditing: false
     }]))
     console.log(todos);
   }
 
-  // const addTodo = todo => {
-  //   setTodos([...todos, {id: uuidv4, task: todo, completed: false,
-  //   isEditing: false}])
-  // }
+  const toggleComplete = id => {
+    setTodos(todos.map(todo => todo.id === id ?
+    {...todo, completed: !todo.completed} : todo))
+  }
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  }
   return (
     <div className="flex flex-col gap-[5px] items-end w-full 
-        pl-[10px] pr-[10px] pt-[10px] h-[288px]">
+        pl-[10px] pr-[10px] pt-[10px] max-h-[278px]">
         <div className="w-[631px] border-black border-4 
-        rounded-xl p-[10px] min-h-[250px]">
+        rounded-xl p-[10px] max-h-[260px] min-h-[260px]">
             <h2 className="text-[28px] pb-[15px]">
                 {props.title}
-                
             </h2>
             <TodoForm addTodo={addTodo}/>
-            {todos.map((todo, index) => (
-              <Todo task={todo} key={index}/>
+           <div className="max-h-[132px] flex-col overflow-auto"> 
+              {todos.map((todo, index) => (
+                <Todo task={todo} key={index}
+                toggleComplete={toggleComplete}
+                deleteTodo={deleteTodo}/>
+                )
               )
-            )
-            }
-
-
-
-            
-        {/* <TodoList /> */}
-
-
-            {/* <AddTodo addTodo={addTodo}/>
-            {todos.map((todo,index) => {
-              <Todo/>
-            })} */}
+              }
+            </div>
         </div> 
     </div>
   )

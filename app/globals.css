@@ -6,3 +6,30 @@ h1 {
   margin: 0;
   padding: 0;
 }
+/* list-none w-full cursor-pointer
+      text-[20px] text-black m-0 border-b-4 border-black
+      mb-[10px] mt-[10px] mr-[10px]" style={{style}} */
+.todoDefault {
+  list-style-type: none;
+  font-size: 20px;
+  margin: 0;
+  width: full;
+  cursor: pointer;
+  color: black;
+  border-bottom: 4px;
+  border-color: black;
+  margin: 10px, 10px, 10px;
+
+}
+
+
+
+.completed {
+  list-style-type: none;
+  font-size: 20px;
+  margin: 0;
+  width: 588px;
+  cursor: pointer;
+  margin: 10px, 10px, 10px;
+  text-decoration: line-through;
+}
