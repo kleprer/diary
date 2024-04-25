@@ -20,7 +20,8 @@ const TodoForm = (props) => {
             <input type="text" placeholder="" value={value}
             className="focus:outline-none text-[20px] 
             text-black p-[5px] w-full rounded-xl border-4 
-            border-black" onChange={(e) => setValue(e.target.value)}>
+            border-black" onChange={(e) => setValue(e.target.value)}
+            maxlength="56">
             </input>
             <button type="submit">
                 <FiPlus className="size-[40px]
