@@ -7,3 +7,4 @@ const DairyWindow = () => {
         </div>
     )
 }
+export default DairyWindow
