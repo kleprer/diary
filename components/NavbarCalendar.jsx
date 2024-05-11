@@ -25,7 +25,7 @@ const NavbarCalendar = () => {
                 {isOpen && (
                 <div className="border-black border-4 w-full rounded-xl">
                     <h3 className="ml-[30px] mr-[50px] mt-[5px]">Имя польз.</h3>
-                    <h3 className="ml-[30px] mr-[50px] mt-[5px]">Календарь</h3>
+                    <Link href="/calendar"><h3 className="ml-[30px] mr-[50px] mt-[5px]">Календарь</h3></Link>
                     <Link href="/dairy"><h3 className="ml-[30px] mr-[50px] mt-[5px]">Ежедневник</h3></Link>
                     <Link href="/"><h3 className="ml-[30px] mr-[50px] mt-[5px] text-red-600">Выйти</h3></Link>
                 </div>
