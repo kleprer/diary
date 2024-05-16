@@ -7,7 +7,7 @@ const NavbarCalendar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <nav className="flex justify-between items-center w-full h-72 bg-transparent 
-        top-0 mt-2 ml-[10px] position: relative">
+        top-0 mt-2 ml-[10px] pr-[20px] position: relative">
             <Link href="/">     
                 <h2 className=" mr-[20px] text-{20} text-black px-8 py-3 
                 border-black border-4 rounded-xl hover:border-gray-300 hover:text-gray-300 
@@ -23,11 +23,22 @@ const NavbarCalendar = () => {
                     A
                 </button> 
                 {isOpen && (
-                <div className="border-black border-4 w-full rounded-xl">
-                    <h3 className="ml-[30px] mr-[50px] mt-[5px]">Имя польз.</h3>
-                    <Link href="/calendar"><h3 className="ml-[30px] mr-[50px] mt-[5px]">Календарь</h3></Link>
-                    <Link href="/dairy"><h3 className="ml-[30px] mr-[50px] mt-[5px]">Ежедневник</h3></Link>
-                    <Link href="/"><h3 className="ml-[30px] mr-[50px] mt-[5px] text-red-600">Выйти</h3></Link>
+                <div className="border-black border-[3px] w-[230px] rounded-xl fixed top-[85px]
+                right-[20px] bg-white h-[180px] flex flex-col items-center">
+                    <h3 className="ml-[15px] mr-[15px] mt-[15px]">Имя польз.</h3>
+                    <Link href="/calendar"><h3 className="ml-[15px] mr-[15px] mt-[5px]
+                    hover:text-gray-300">Календарь</h3></Link>
+                    <Link href="/dairy"><h3 className="ml-[15px] mr-[15px] mt-[5px] 
+                    hover:text-gray-300">Ежедневник</h3></Link>
+                    <Link href="/">
+                        <button className=" text-center w-[200px] 
+                            border-black border-4 rounded-xl mt-[15px] py-[6px]
+                            hover:border-gray-300 hover:text-gray-300
+                            ml-[15px] mr-[15px] mt-[15px] mb-[10px] text-red-600"> 
+                        Выйти
+                        </button>
+                        {/* <h3 className="ml-[15px] mr-[15px] mt-[5px] mb-[5px] text-red-600">Выйти</h3>*/}
+                        </Link> 
                 </div>
                 )}
             </div>
