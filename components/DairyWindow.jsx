@@ -36,7 +36,8 @@ const DairyWindow = () => {
             </div>
             <textarea className="static mt-[20px] peer w-full h-[400px] resize-none p-[15px]
             outline-none focus:border-t-transparent  rounded-xl text-[20px]
-            focus:outline-0 disabled:resize-none disabled:border-0"
+            focus:outline-0 disabled:resize-none disabled:border-0
+            "
             placeholder="Как прошел ваш день?"></textarea>
         </div>
     )
