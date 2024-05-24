@@ -1,6 +1,5 @@
 import { Unbounded } from "next/font/google";
 import "./globals.css";
-
 const font = Unbounded({ subsets: ["cyrillic"] });
 
 export const metadata = {
@@ -13,7 +12,8 @@ export default function RootLayout({ children }) {
     <html lang="ru">
       <body className={font.className}>
         {children}
-        </body>
+      </body>
     </html>
   );
 }
+
