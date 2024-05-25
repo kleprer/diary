@@ -17,7 +17,7 @@ const TodoForm = (props) => {
             user_id: 1,
             [props.name]: value,
             date: props.chosenDate,
-            id: props.todos.length + 1
+            id: (props.todos || []).length + 1
       
           }
 

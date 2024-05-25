@@ -10,23 +10,16 @@ const Card = (props) => {
   (props.type === "plans") 
     ? name = "plan_name"
     : name = "goal_name"
-
   const addTodo = (todo) => { 
-    setTodos(todos.concat([{
-      id: todos.length + 1,
+
+    setTodos((todos || []).concat([{
+      id: (todos || []).length + 1,
       title: todo,
       completed: false,
       date: props.chosenDate,
-    }]
-    
-  ))
-    const newTodo = {
-      user_id: 1,
-      [name]: props.todo,
-      date: props.chosenDate,
-      id: todos.length + 1
-
-    }
+    }]))
+    console.log(todos);
+  
   }
   // CONNECT
   const fetchTodos = async () => {
@@ -59,7 +52,7 @@ const Card = (props) => {
               </h2>
               <TodoForm addTodo={addTodo} /* {newTodo={newTodo} */ todos={todos} fetchTodos={fetchTodos} name={name} type={props.type}/>
             <div className="max-h-[132px] flex-col overflow-auto"> 
-                {todos.map((todo, index) => (
+                {(todos || []).map((todo, index) => (
                   <Todo task={todo} key={index}
                   toggleComplete={toggleComplete}
                   deleteTodo={deleteTodo}/>
