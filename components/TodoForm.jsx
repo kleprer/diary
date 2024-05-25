@@ -1,6 +1,7 @@
 'use client'
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { FiPlus } from "react-icons/fi";
+
 
 const TodoForm = (props) => {
 
@@ -11,21 +12,16 @@ const TodoForm = (props) => {
         if (value.trim() !== "") {
             props.addTodo(value);
         }
-
-        // CONNECTION
-        // i guess it's JSON.stringify(**value**) ???
-        // не уверена что передавать в body, нужно чекать model.py наверное
-        // const {fetchTodos} = React.useContext(TodosContext)
-        // fetch(`http://localhost:8081/planner/${props.type}`, {
-        // method: "POST",
-        // headers: { "Content-Type": "application/json" },
-        // body: JSON.stringify(value)
-        // }).then(fetchTodos)
+        fetch(`http://localhost:8081/planner/${props.type}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(props.newTodo)
+        }).then(props.fetchTodos)
 
         setValue('');
             
     }
-
+    
     return (
         <form className="flex gap-[5px] items-center"
         onSubmit={handleSubmit}>
