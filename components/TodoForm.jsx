@@ -12,10 +12,19 @@ const TodoForm = (props) => {
         if (value.trim() !== "") {
             props.addTodo(value);
         }
+
+        const newTodo = {
+            user_id: 1,
+            [props.name]: value,
+            date: props.chosenDate,
+            id: props.todos.length + 1
+      
+          }
+
         fetch(`http://localhost:8081/planner/${props.type}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(props.newTodo)
+        body: JSON.stringify(newTodo)
         }).then(props.fetchTodos)
 
         setValue('');

@@ -6,9 +6,8 @@ import Todo from './Todo';
 const Card = (props) => {
   let newTodo;
   const [todos, setTodos] = useState([]);
-  const hasScroll = todos.length > 3;
   let name;
-  (props.name === "plans") 
+  (props.type === "plans") 
     ? name = "plan_name"
     : name = "goal_name"
 
@@ -21,10 +20,11 @@ const Card = (props) => {
     }]
     
   ))
-    newTodo = {
+    const newTodo = {
       user_id: 1,
-      [name]: todo,
-      date: props.chosenDate
+      [name]: props.todo,
+      date: props.chosenDate,
+      id: todos.length + 1
 
     }
   }
@@ -57,7 +57,7 @@ const Card = (props) => {
               <h2 className="text-[28px] pb-[15px]">
                   {props.title}
               </h2>
-              <TodoForm addTodo={addTodo} newTodo={newTodo} todos={todos} fetchTodos={fetchTodos} type={props.type}/>
+              <TodoForm addTodo={addTodo} /* {newTodo={newTodo} */ todos={todos} fetchTodos={fetchTodos} name={name} type={props.type}/>
             <div className="max-h-[132px] flex-col overflow-auto"> 
                 {todos.map((todo, index) => (
                   <Todo task={todo} key={index}
@@ -67,7 +67,7 @@ const Card = (props) => {
                 )
                 }
               </div>
-          </div> 
+          </div>
       </div>
   )
 }
