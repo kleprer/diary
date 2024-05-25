@@ -4,7 +4,7 @@ import TodoForm from './TodoForm';
 import Todo from './Todo';
 
 const Card = (props) => {
-  
+  let newTodo;
   const [todos, setTodos] = useState([]);
   const hasScroll = todos.length > 3;
   let name;
@@ -21,13 +21,12 @@ const Card = (props) => {
     }]
     
   ))
-    const newTodo = {
+    newTodo = {
       user_id: 1,
       [name]: todo,
       date: props.chosenDate
 
     }
-    
   }
   // CONNECT
   const fetchTodos = async () => {
@@ -40,9 +39,6 @@ const Card = (props) => {
     fetchTodos()
   }, [])
 
-  const newTodo = {
-
-  }
 
   const toggleComplete = id => {
     setTodos(todos.map(todo => todo.id === id ?
@@ -52,20 +48,8 @@ const Card = (props) => {
   const deleteTodo = async (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
 
-    // CONNECTION
-    // await fetch(`http://localhost:8081/planner/${props.type}`, {
-    //     method: "DELETE",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: { "id": id } ?????????????????????????????????
-    //   })
-    //   await fetchTodos()
-    // ???? не нашла такого роута у тебя в routers.py но ладно с ним пока, сделать бы так
-    // чтобы другие типо put и get работали?? это пока не трогай наверное я не знаю
-    
-    
   }
   return (
-    // <TodosContext.Provider value={{todos, fetchTodos}}>
       <div className="flex flex-col gap-[5px] items-end w-full 
           pl-[10px] pr-[10px] pt-[10px] max-h-[278px]">
           <div className="w-[631px] border-black border-4 
@@ -85,7 +69,6 @@ const Card = (props) => {
               </div>
           </div> 
       </div>
-    // </TodosContext.Provider>
   )
 }
 
