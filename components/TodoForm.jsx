@@ -11,7 +11,19 @@ const TodoForm = (props) => {
         if (value.trim() !== "") {
             props.addTodo(value);
         }
+
+        // CONNECTION
+        // i guess it's JSON.stringify(**value**) ???
+        // не уверена что передавать в body, нужно чекать model.py наверное
+        // const {fetchTodos} = React.useContext(TodosContext)
+        // fetch(`http://localhost:8081/planner/${props.type}`, {
+        // method: "POST",
+        // headers: { "Content-Type": "application/json" },
+        // body: JSON.stringify(value)
+        // }).then(fetchTodos)
+
         setValue('');
+            
     }
 
     return (
