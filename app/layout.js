@@ -1,6 +1,9 @@
 import { Unbounded } from "next/font/google";
 import "./globals.css";
+import api from './api';
 const font = Unbounded({ subsets: ["cyrillic"] });
+
+
 
 export const metadata = {
   title: "Ежедневник",

@@ -2,16 +2,44 @@
 import React, { useState, useEffect, createContext } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
+import api from '../app/api';
+
 
 const Card = (props) => {
-  let newTodo;
-  const [todos, setTodos] = useState([]);
+
   let name;
-  
   (props.type === "plans") 
     ? name = "plan_name"
     : name = "goal_name"
-  const addTodo = (todo) => { 
+
+  const fetchTodos = async () => {
+    const response = await api.get(`/planner/${props.type}`);
+    setTodos(response.data)
+  };
+    
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState({
+    'user_id': 1,
+    [`${name}`]: '',
+    'date': '',
+    'id': 0
+  });
+
+  //AXIOS
+  
+
+  useEffect(() => {
+    fetchTodos();
+  }, [])
+  
+  const addTodo = async (todo) => { 
+
+    setNewTodo({
+      'user_id': 1,
+      [`${name}`]: todo,
+      'date': props.chosenDate,
+      'id': todos.length + 1 
+    })
 
     setTodos((todos || []).concat([{
       id: (todos || []).length + 1,
@@ -19,19 +47,42 @@ const Card = (props) => {
       completed: false,
       date: props.chosenDate,
     }]))
-    console.log(todos);
+    console.log(newTodo);
+    await api.post(`/planner/${props.type}`, JSON.stringify(newTodo))
+    .then(response => {
+      console.log(response)
+      next()
+    })
+    .catch(error => {
+      console.log(error)
+    }
+    );
+    
+    
+    
+    fetchTodos();
+    setNewTodo({
+      'user_id': '',
+      [`${name}`]: '',
+      'date': '',
+      'id': 0
+    })
+
+    
+
+    
   
   }
   // CONNECT
-  const fetchTodos = async () => {
-  const response = await fetch(`http://localhost:8081/planner/${props.type}`)
-    const todos = await response.json()
-    setTodos(todos.data)
-  }
+  // const fetchTodos = async () => {
+  // const response = await fetch(`http://localhost:8081/planner/${props.type}`)
+  //   const todos = await response.json()
+  //   setTodos(todos.data)
+  // }
 
-  useEffect(() => {
-    fetchTodos()
-  }, [])
+  // useEffect(() => {
+  //   fetchTodos()
+  // }, [])
 
 
   const toggleComplete = async (id) => {
@@ -51,7 +102,7 @@ const Card = (props) => {
               <h2 className="text-[28px] pb-[15px]">
                   {props.title}
               </h2>
-              <TodoForm addTodo={addTodo} /* {newTodo={newTodo} */ todos={todos} fetchTodos={fetchTodos} name={name} type={props.type}/>
+              <TodoForm addTodo={addTodo} todos={todos}  name={name} type={props.type}/>
             <div className="max-h-[132px] flex-col overflow-auto"> 
                 {(todos || []).map((todo, index) => (
                   <Todo task={todo} key={index}

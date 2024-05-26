@@ -10,12 +10,11 @@ export default function CalendarTasksGoals() {
 
     const [date, setDate] = useState(new Date());
     const onChange = date => {
-
         setDate(date);
         
     }
     const d = date.toISOString().split('T')[0];
-
+    console.log(d);
     return(
         <>
             <NavbarCalendar />
@@ -29,10 +28,10 @@ export default function CalendarTasksGoals() {
                 <div className="flex flex-col items-end w-full 
                 pl-[10px] pr-[10px]">
                     {date.getMonth()+1 < 10 
-                        ? <Card type={"plans"} title={`Планы на ${date.getDate()}.0${date.getMonth()+1}`} chosenDate={date.toISOString().split('T')[0]}/>
+                        ? <Card  type={"plans"} title={`Планы на ${date.getDate()}.0${date.getMonth()+1}`} chosenDate={date.toISOString().split('T')[0]}/>
                         : <Card type={"plans"} title={`Планы на ${date.getDate()}.${date.getMonth()+1}`} chosenDate={date.toISOString().split('T')[0]}/>
                     }
-                    <Card type={"goals"} title={"Цели"} />
+                    <Card  type={"goals"} title={"Цели"} />
                 </div>
             </div>
             </>
