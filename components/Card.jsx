@@ -7,6 +7,7 @@ const Card = (props) => {
   let newTodo;
   const [todos, setTodos] = useState([]);
   let name;
+  
   (props.type === "plans") 
     ? name = "plan_name"
     : name = "goal_name"
@@ -33,9 +34,9 @@ const Card = (props) => {
   }, [])
 
 
-  const toggleComplete = id => {
+  const toggleComplete = async (id) => {
     setTodos(todos.map(todo => todo.id === id ?
-    {...todo, completed: !todo.completed} : todo))
+      {...todo, completed: !todo.completed} : todo))
   }
 
   const deleteTodo = async (id) => {

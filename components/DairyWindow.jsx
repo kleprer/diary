@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { useState, createContext, useEffect } from "react";
+import ButtonRA from './ButtonRA'
 import Calendar from 'react-calendar';
 import '../app/DiaryCalendar.css';
 
@@ -9,27 +10,38 @@ const DairyWindow = () => {
     const onChange = date => {
         setDate(date);
     }
-    const [note, setNote] = useState('');
+    const [notes, setNotes] = useState([]);
     
-    // CONNECTION
-    // const NotesContext = React.createContext({
-    //     notes: [], fetchNotes: () => {}
-    //   })
-    // const fetchNotes = async () => {
-    //     const response = await fetch("http://localhost:8081/planner/notes")
-    //     const note = await response.json()
-    //     setNote(note.data)
-    // }
+    const [note, setNote] = useState('');
 
-    // useEffect(() => {
-    //     fetchNote()
-    //   }, [])
+    const handleSubmit = (e) => {
 
+        e.preventDefault();
+        const form = e.target;
+
+        setNote(form.value)
+
+        let newData = {
+            //??? не могу посмотреть модель т.к. не загружается локалхост
+
+        }
+
+        // fetch(`http://localhost:8081/planner/${props.type}`, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(newNote)
+        //     }).then(props.fetchTodos)
+
+
+        console.log(note);
+    }
+    
+
+    
     const [isOpen, setIsOpen] = useState(false)
     
 
     return (
-        // <NotesContext.Provider value={{note, fetchNotes}}></NotesContext.Provider>
             <div className="h-[520px] mb-[10px] ml-[10px] mr-[20px] 
             border-black border-[4px] rounded-xl mt-[20px] p-[3px]"> 
                 <div className="flex items-end mt-[10px] gap-[20px]">  
@@ -53,13 +65,19 @@ const DairyWindow = () => {
                             Выбрать дату
                     </button>
                 </div>
-                <textarea className="static mt-[20px] peer w-full h-[400px] resize-none p-[15px]
-                outline-none focus:border-t-transparent  rounded-xl text-[20px]
-                focus:outline-0 disabled:resize-none disabled:border-0"
-                id={`note${date}`} onChange={e => setNote(e.target.value)}
-                placeholder="Как прошел ваш день?"></textarea>
+                    <form className="flex flex-col items-end" onSubmit={handleSubmit}> 
+                        <textarea className="leading-[50px] static mt-[15px] peer w-full h-[320px] 
+                        outline-none focus:border-t-transparent  rounded-xl text-[22px] 
+                        focus:outline-0 disabled:resize-none disabled:border-0 resize-none p-[15px]"
+                        id={`note${date}`} placeholder="Как прошел ваш день?" onChange={(e) => setNote(e.target.value)} />
+                        <button  type="submit" onclick={handleSubmit} className="h-[55px]  
+                        text-[20px] text-center w-[230px] 
+                        border-black border-4 rounded-xl mt-[15px] py-[6px]
+                        hover:border-gray-300 hover:text-gray-300 mr-[20px]">
+                            Сохранить
+                        </button>
+                    </form>
             </div>
-        // </NotesContext.Provider>
     )
 }
 export default DairyWindow
