@@ -4,10 +4,7 @@ import { FiX } from "react-icons/fi";
 
 const Todo = (props) => {
 
-// 'list-none w-full cursor-pointer
-//       text-[20px] text-black m-0 border-b-4 border-black
-//       mb-[5px] mt-[5px] mr-[5px]'
-
+  
   return (
     <div className="flex items-center justify-between w-[588px] min-h-[44px] border-b-4 border-black"
     style={{ opacity: props.task.completed ? '50%': '100%'}}>

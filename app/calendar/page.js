@@ -1,20 +1,45 @@
 'use client'
 import NavbarCalendar from "/components/NavbarCalendar";
 import Card from "/components/Card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import api from '../api';
 import Calendar from 'react-calendar';
 import '../Calendar.css';
 
 
 export default function CalendarTasksGoals() {
 
+
     const [date, setDate] = useState(new Date());
+    const d = date.toISOString().split('T')[0];
     const onChange = date => {
         setDate(date);
-        
+        fetchPlans(response.data.date===date);
+        fetchGoals(response.data.date===date);
     }
-    const d = date.toISOString().split('T')[0];
-    console.log(d);
+    
+    const [plans, setPlans] = useState([]);
+    const [goals, setGoals] = useState([]);
+    const fetchPlans = async () => {
+        const response = await api.get('/planner/plans');
+        setPlans(response.data);
+        console.log(response.data)
+    }
+
+    const fetchGoals = async () => {
+        const response = await api.get('/planner/goals');
+        setGoals(response.data);
+        console.log(response.data)
+    }
+    
+    useEffect(() => {
+        fetchPlans()
+    }, []);
+
+    useEffect(() => {
+        fetchGoals()
+    }, [])
+
     return(
         <>
             <NavbarCalendar />
@@ -28,10 +53,10 @@ export default function CalendarTasksGoals() {
                 <div className="flex flex-col items-end w-full 
                 pl-[10px] pr-[10px]">
                     {date.getMonth()+1 < 10 
-                        ? <Card  type={"plans"} title={`Планы на ${date.getDate()}.0${date.getMonth()+1}`} chosenDate={date.toISOString().split('T')[0]}/>
-                        : <Card type={"plans"} title={`Планы на ${date.getDate()}.${date.getMonth()+1}`} chosenDate={date.toISOString().split('T')[0]}/>
+                        ? <Card todos={plans} setTodos={setPlans} fetchTodos={fetchPlans} type={"plans"} title={`Планы на ${date.getDate()}.0${date.getMonth()+1}`} chosenDate={d}/>
+                        : <Card todos={plans} setTodos={setPlans} fetchTodos={fetchPlans} type={"plans"} title={`Планы на ${date.getDate()}.${date.getMonth()+1}`} chosenDate={d}/>
                     }
-                    <Card  type={"goals"} title={"Цели"} />
+                    <Card  todos={goals} setTodos={setGoals} fetchTodos={fetchGoals} type={"goals"} title={"Цели"} chosenDate={d}/>
                 </div>
             </div>
             </>

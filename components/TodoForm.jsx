@@ -10,16 +10,15 @@ const TodoForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (value.trim() !== "") {
-            props.addTodo(value);
+            props.addTodo({
+                id: props.todos.length + 1,
+                user_id: 1,
+                title: value,
+                date: props.chosenDate,
+                completed: false
+            })
         }
-
-        
-
-        // fetch(`http://localhost:8081/planner/${props.type}`, {
-        // method: "POST",
-        // headers: { "Content-Type": "application/json" },
-        // body: JSON.stringify(newTodo)
-        // }).then(props.fetchTodos)
+        console.log(props.todos);
 
         setValue('');
             
