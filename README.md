@@ -5,7 +5,7 @@ Tries to connect both frontend and backend parts can be found in some of the rec
 
 ## Description
 
-This is the user interface part of a dairy platform. Write notes, add plans and goals to your calendar.
+This is the user interface part of a desktop dairy platform. Write notes, add plans and goals to your calendar.
 
 ## Content
 
