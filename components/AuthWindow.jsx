@@ -13,11 +13,11 @@ const AuthWindow = () => {
             <InputAR name="Электронная почта" />
             <InputAR name="Пароль" />
             <Link href="/calendar" className="m-auto"> <ButtonRA name="Войти" /> </Link>
-            <h2 className="text-[20px] text-center mt-[15px]">
-                или
-            </h2>
+              <h2 className="text-[20px] text-center mt-[15px]">
+                  или
+              </h2>
             <Link href="/registration" className="m-auto">
-            <ButtonRA name="Регистрация" />
+              <ButtonRA name="Регистрация" />
             </Link>
         </div>
     </div>

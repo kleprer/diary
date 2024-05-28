@@ -12,4 +12,4 @@ const ButtonRA = (props) => {
     )
 }
 
-export default ButtonRA
+export default ButtonRA;

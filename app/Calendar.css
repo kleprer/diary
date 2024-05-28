@@ -1,6 +1,6 @@
 .react-calendar {
     width: 671px;
-    height: 530px;
+    min-height: 530px;
     max-width: 100%;
     background: white;
     border: 4px solid #000000;
@@ -39,6 +39,7 @@
     margin: 0;
     border: 0;
     outline: none;
+    
   }
   
   .react-calendar button:enabled:hover {
@@ -49,12 +50,14 @@
     display: flex;
     height: 54.26px;
     margin-bottom: 0.6em;
+    font-size: 28px;
   }
   
   .react-calendar__navigation button {
     min-width: 44px;
     background: none;
     text-transform: capitalize;
+    font-size: 28px;
   }
   
   .react-calendar__navigation button:disabled {

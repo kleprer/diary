@@ -2,8 +2,7 @@ import React from 'react'
 
 const NavbarHomeLogged = () => {
   return (
-    <nav className="flex justify-end items-center w-full h-72 bg-transparent 
-    top-0 mt-2 position: relative">
+    <nav className="flex justify-end items-center w-full h-72 bg-transparent top-0 mt-2 position: relative">
        <div className=" flex flex-col items-right rounded-xl">
         <button className="text-center p-4 mr-[10px] align-top text-black px-[13px] py-[13px] border-black border-4 rounded-full hover:border-gray-300 hover:text-gray-300 hover:cursor-pointer w-[52px] h-[52px]" onClick={()=> setIsOpen((prev) => !prev)}>
           A
