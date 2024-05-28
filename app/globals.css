@@ -6,9 +6,6 @@ h1 {
   margin: 0;
   padding: 0;
 }
-/* list-none w-full cursor-pointer
-      text-[20px] text-black m-0 border-b-4 border-black
-      mb-[10px] mt-[10px] mr-[10px]" style={{style}} */
 .todoDefault {
   list-style-type: none;
   font-size: 20px;
