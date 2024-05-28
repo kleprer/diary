@@ -6,7 +6,6 @@ import Todo from './Todo';
 const Card = (props) => {
   
   const [todos, setTodos] = useState([]);
-  const hasScroll = todos.length > 3;
   const addTodo = (todo) => { 
     setTodos(todos.concat([{
       id: todos.length + 1,
