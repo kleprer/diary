@@ -20,9 +20,11 @@ export default function CalendarTasksGoals() {
     
     const [plans, setPlans] = useState([]);
     const [goals, setGoals] = useState([]);
+    
     const fetchPlans = async () => {
         const response = await api.get('/planner/plans');
         setPlans([...plans, response.data]);
+        
     }
 
     const fetchGoals = async () => {

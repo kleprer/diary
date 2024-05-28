@@ -18,7 +18,6 @@ const TodoForm = (props) => {
                 completed: false
             })
         }
-        console.log(props.todos);
 
         setValue('');
             

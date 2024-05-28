@@ -9,16 +9,11 @@ const Card = (props) => {
 
 
   const addTodo = async (todo) => { 
-    
-    props.setTodos(...props.todos, todo);
-    await api.post(`/planner/${props.type}`, JSON.stringify(todo));
-    console.log(props.todos);
-    
-
+    props.setTodos([...(props.todos), todo]);
+    await api.post(`/planner/${props.type}`, todo);
 
     props.fetchTodos();
     
-    console.log(todos);
   }
 
   const toggleComplete = async (id) => {
