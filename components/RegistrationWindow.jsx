@@ -13,7 +13,7 @@ const RegistrationWindow = () => {
                 <InputAR name ="Имя" />
                 <InputAR name="Электронная почта" />
                 <InputAR name="Пароль" />
-                <Link href="/calendar-ta" className="m-auto">
+                <Link href="/calendar" className="m-auto">
                     <ButtonRA name = "Создать аккаунт" />
                 </Link>
             </div>
