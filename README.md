@@ -5,7 +5,15 @@ Tries to connect both frontend and backend parts can be found in some of the rec
 
 ## Description
 
-This is the user interface part of a desktop dairy platform. Write notes, add plans and goals to your calendar.
+This is the user interface part of a desktop dairy platform. Write notes, add plans and goals to your calendar. 
+
+## Design
+
+You can explore the figma prototype our team designer made for this project [`here`](https://www.figma.com/proto/KGQu3b3lkwljwjzvUW9HCJ/diary?node-id=2104-8&starting-point-node-id=2104%3A8)
+
+## Note
+
+(The development process lacked some testing and the team couldn't make the interface adaptive within deadline, so it only looks `great` on 1366x768 screens. See the design)
 
 ## Content
 
